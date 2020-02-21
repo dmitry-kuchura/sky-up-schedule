@@ -1,9 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AirportSelectActivity">
+    android:background="@color/colorGray">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/header" />
+
+    <ImageView
+        android:id="@+id/header_logo"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:src="@drawable/header_logo" />
+
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/ukraine_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ukraine_map" />
+
+        <ImageView
+            android:id="@+id/lviv_airport"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/airport_point" />
+
+        <ImageView
+            android:id="@+id/kharkiv_airport"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginStart="280dp"
+            android:src="@drawable/airport_point" />
+
+        <ImageView
+            android:id="@+id/kyiv_airport"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="255dp"
+            android:layout_marginStart="145dp"
+            android:src="@drawable/airport_point" />
+
+        <ImageView
+            android:id="@+id/zaporozhye"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginStart="245dp"
+            android:src="@drawable/airport_point" />
+    </FrameLayout>
+
+</FrameLayout>
