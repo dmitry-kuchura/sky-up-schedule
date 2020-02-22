@@ -30,6 +30,7 @@
 
         <ImageView
             android:id="@+id/lviv_airport"
+            android:onClick="setLvivAirport"
             android:layout_width="80dp"
             android:layout_height="100dp"
             android:layout_marginTop="270dp"
