@@ -33,7 +33,7 @@
             android:onClick="setLvivAirport"
             android:layout_width="80dp"
             android:layout_height="100dp"
-            android:layout_marginTop="270dp"
+            android:layout_marginTop="240dp"
             android:layout_marginStart="5dp"
             android:src="@drawable/airport_point" />
 
@@ -41,24 +41,24 @@
             android:id="@+id/kharkiv_airport"
             android:layout_width="80dp"
             android:layout_height="100dp"
-            android:layout_marginTop="280dp"
-            android:layout_marginStart="280dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginStart="290dp"
             android:src="@drawable/airport_point" />
 
         <ImageView
             android:id="@+id/kyiv_airport"
             android:layout_width="80dp"
             android:layout_height="100dp"
-            android:layout_marginTop="255dp"
-            android:layout_marginStart="145dp"
+            android:layout_marginTop="225dp"
+            android:layout_marginStart="160dp"
             android:src="@drawable/airport_point" />
 
         <ImageView
             android:id="@+id/zaporozhye"
             android:layout_width="80dp"
             android:layout_height="100dp"
-            android:layout_marginTop="340dp"
-            android:layout_marginStart="245dp"
+            android:layout_marginTop="315dp"
+            android:layout_marginStart="265dp"
             android:src="@drawable/airport_point" />
     </FrameLayout>
 
