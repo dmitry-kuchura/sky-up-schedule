@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sky Up Schedule</string>
+    <string name="press_again_to_exit">Нажмите еще раз для выхода</string>
 </resources>
