@@ -25,29 +25,10 @@
         android:layout_marginTop="5dp"
         android:src="@drawable/weather_sunny" />
 
-    <FrameLayout
-        android:id="@+id/map_container"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/schedule"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/departed"
-            android:layout_width="130dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="300dp"
-            android:onClick="showDepartedFlights"
-            android:src="@drawable/departed" />
-
-        <ImageView
-            android:id="@+id/arrival"
-            android:layout_width="130dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="220dp"
-            android:layout_marginTop="300dp"
-            android:onClick="showArrivalFlights"
-            android:src="@drawable/arrival" />
-
-    </FrameLayout>
+        android:layout_height="590dp"
+        android:layout_marginTop="140dp" />
 
 </FrameLayout>
