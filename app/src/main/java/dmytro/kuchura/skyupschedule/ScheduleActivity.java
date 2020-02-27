@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -30,6 +31,8 @@ public class ScheduleActivity extends AppCompatActivity {
     private FlightAdapter flightAdapter;
     private ArrayList<Flight> flights;
     private RequestQueue requestQueue;
+    private long backPressedTime;
+    private Toast backToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,7 @@ public class ScheduleActivity extends AppCompatActivity {
 
     private void getFlights() {
 
-        String url = "http://localhost:8080/api/flights?airport=KBP";
+        String url = "http://192.168.56.1:8080/api/flights?airport=KBP";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -106,5 +109,18 @@ public class ScheduleActivity extends AppCompatActivity {
         });
 
         requestQueue.add(request);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+        } else {
+            backToast = Toast.makeText(getBaseContext(), R.string.press_again_to_exit, Toast.LENGTH_SHORT);
+            backToast.show();
+        }
+
+        backPressedTime = System.currentTimeMillis();
     }
 }

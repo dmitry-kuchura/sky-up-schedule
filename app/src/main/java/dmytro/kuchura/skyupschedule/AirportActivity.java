@@ -42,6 +42,10 @@ public class AirportActivity extends AppCompatActivity {
     }
 
     public void showDepartedFlights(View view) {
+        Intent showArrivalFlights = new Intent(AirportActivity.this, ScheduleActivity.class);
+        startActivity(showArrivalFlights);
+
+        finish();
     }
 
     public void showArrivalFlights(View view) {
