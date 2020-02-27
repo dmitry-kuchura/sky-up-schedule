@@ -63,24 +63,39 @@ public class ScheduleActivity extends AppCompatActivity {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                         String number = jsonObject.getString("Number");
+
+                        JSONObject info = jsonObject.getJSONObject("Info");
+                        String planeModel = info.getString("Model");
+                        String planeFirstFly = info.getString("FirstFly");
+                        String planeAge = info.getString("Age");
+                        String planePlaces = info.getString("Places");
+
+                        JSONObject departure = jsonObject.getJSONObject("DepartureTrafficHub");
+                        String departureName = departure.getString("Name");
+                        String departureCode = departure.getString("Code");
+
+                        JSONObject arrival = jsonObject.getJSONObject("DepartureTrafficHub");
+                        String arrivalName = arrival.getString("Name");
+                        String arrivalCode = arrival.getString("Code");
+
                         String departureTime = jsonObject.getString("DepartureTime");
                         String arrivalTime = jsonObject.getString("ArrivalTime");
                         String boardStatus = jsonObject.getString("BoardStatus");
                         boolean isCharter = jsonObject.getBoolean("IsCharter");
 
                         Plane plane = new Plane();
-                        plane.setModel("");
-                        plane.setFirstFly("");
-                        plane.setAge("");
-                        plane.setPlaces("");
+                        plane.setModel(planeModel);
+                        plane.setFirstFly(planeFirstFly);
+                        plane.setAge(planeAge);
+                        plane.setPlaces(planePlaces);
 
                         TrafficHub departureTrafficHub = new TrafficHub();
-                        departureTrafficHub.setName("");
-                        departureTrafficHub.setCode("");
+                        departureTrafficHub.setName(departureName);
+                        departureTrafficHub.setCode(departureCode);
 
                         TrafficHub arrivalTrafficHub = new TrafficHub();
-                        arrivalTrafficHub.setName("");
-                        arrivalTrafficHub.setCode("");
+                        arrivalTrafficHub.setName(arrivalName);
+                        arrivalTrafficHub.setCode(arrivalCode);
 
                         Flight flight = new Flight();
                         flight.setNumber(number);
