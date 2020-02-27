@@ -51,7 +51,7 @@ public class ScheduleActivity extends AppCompatActivity {
 
     private void getFlights() {
 
-        String url = "http://192.168.56.1:8080/api/flights?airport=KBP";
+        String url = "http://192.168.56.1:8080/api/flights/departed?airport=KBP";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -74,7 +74,7 @@ public class ScheduleActivity extends AppCompatActivity {
                         String departureName = departure.getString("Name");
                         String departureCode = departure.getString("Code");
 
-                        JSONObject arrival = jsonObject.getJSONObject("DepartureTrafficHub");
+                        JSONObject arrival = jsonObject.getJSONObject("ArrivalTrafficHub");
                         String arrivalName = arrival.getString("Name");
                         String arrivalCode = arrival.getString("Code");
 
