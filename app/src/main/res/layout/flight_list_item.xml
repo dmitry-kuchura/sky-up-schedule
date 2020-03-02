@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp">
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="@dimen/activity_padding_horizontal">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:src="@drawable/plane_shakhtar"
+                android:layout_marginTop="5dp"
+                android:layout_width="@dimen/placeholder_image_width"
+                android:layout_height="@dimen/placeholder_image"
+                android:layout_marginEnd="@dimen/padding_10"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -41,7 +57,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="2"
+            android:layout_weight="1.8"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="5dp">
@@ -53,16 +69,16 @@
                 android:text="PQ7105" />
 
             <TextView
-                android:id="@+id/board_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Прибув о 03:50" />
-
-            <TextView
                 android:id="@+id/is_charter_board"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Чартер" />
+
+            <TextView
+                android:id="@+id/board_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Прибув о 03:50" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,4 +109,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

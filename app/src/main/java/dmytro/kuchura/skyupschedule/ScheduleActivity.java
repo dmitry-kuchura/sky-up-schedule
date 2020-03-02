@@ -13,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +28,7 @@ import dmytro.kuchura.skyupschedule.models.TrafficHub;
 
 public class ScheduleActivity extends AppCompatActivity {
 
+    private ShimmerFrameLayout mShimmerViewContainer;
     private RecyclerView recyclerView;
     private FlightAdapter flightAdapter;
     private ArrayList<Flight> flights;
@@ -38,6 +40,8 @@ public class ScheduleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
+
+        mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
 
         recyclerView = findViewById(R.id.schedule);
         recyclerView.hasFixedSize();
@@ -124,6 +128,18 @@ public class ScheduleActivity extends AppCompatActivity {
         });
 
         requestQueue.add(request);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mShimmerViewContainer.startShimmerAnimation();
+    }
+
+    @Override
+    public void onPause() {
+        mShimmerViewContainer.stopShimmerAnimation();
+        super.onPause();
     }
 
     @Override
